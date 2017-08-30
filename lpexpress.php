@@ -351,7 +351,8 @@ class LpExpress extends CarrierModule
 	 *
 	 * @return null|array
 	 */
-	public function getTerminalInfoByTerminalID($terminal_id) {
+	public function getTerminalInfoByTerminalID($terminal_id)
+    {
 		$terminals = $this->getTerminals();
 		foreach ($terminals as $terminal_group) {
 			foreach ($terminal_group as $terminal) {
@@ -412,7 +413,7 @@ class LpExpress extends CarrierModule
 	 */
 	public function hookDisplayCarrierExtraContent($params)
 	{
-		if($params['carrier']['id'] == Configuration::get('LPEXPRESS2_CARRIER_ID')) {
+		if ($params['carrier']['id'] == Configuration::get('LPEXPRESS2_CARRIER_ID')) {
 			$this->smarty->assign('terminals', $this->getTerminals());
 			return $this->fetch('module:lpexpress/views/templates/hook/terminals-list.tpl');
 		}
@@ -434,7 +435,7 @@ class LpExpress extends CarrierModule
 		}
 
 		// Check if it's shipping method with terminals
-		if($params['cart']->id_carrier != Configuration::get('LPEXPRESS2_CARRIER_ID')) {
+		if ($params['cart']->id_carrier != Configuration::get('LPEXPRESS2_CARRIER_ID')) {
 			return;
 		}
 
