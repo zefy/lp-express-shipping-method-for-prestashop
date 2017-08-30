@@ -118,7 +118,8 @@ class LpExpress extends CarrierModule
 			!$this->unregisterHook('displayOrderDetail') ||
 			!$this->unregisterHook('displayOrderConfirmation') ||
 			!$this->unregisterHook('displayAdminOrder') ||
-			!$this->unregisterHook('actionGetExtraMailTemplateVars'))
+			!$this->unregisterHook('actionGetExtraMailTemplateVars') ||
+            !$this->dropMySQLTables())
 		{
 			return false;
 		}
@@ -135,6 +136,7 @@ class LpExpress extends CarrierModule
 			foreach($carriers as $carrier) {
 				if ($carrier['active'] && !$carrier['deleted'] && $carrier['external_module_name'] != $this->name ) {
 					Configuration::updateValue('PS_CARRIER_DEFAULT', $carrier['id_carrier']);
+					break;
 				}
 			}
 		}
@@ -156,7 +158,8 @@ class LpExpress extends CarrierModule
 	 *
 	 * @return bool
 	 */
-	public function createMySQLTables() {
+	public function createMySQLTables()
+    {
 		$success = true;
 		foreach($this->mysql_tables as $table) {
 			$sql = Tools::file_get_contents(_PS_MODULE_DIR_ . $this->name . '/install/' . $table . '.sql');
@@ -174,7 +177,8 @@ class LpExpress extends CarrierModule
 	 *
 	 * @return bool
 	 */
-	public function dropMySQLTables() {
+	public function dropMySQLTables()
+    {
 		$success = true;
 		foreach($this->mysql_tables as $table) {
 			$sql = 'DROP TABLE IF EXISTS `' . _DB_PREFIX_ . $table . '`';
