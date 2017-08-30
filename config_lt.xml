@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>lpexpress</name>
+    <displayName><![CDATA[LP Express pristatymas]]></displayName>
+    <version><![CDATA[1.0.0]]></version>
+    <description><![CDATA[LP Express (lpexpress.lt) pristatymo modulis. &Scaron;is modulis pridės du naujus pristatymo būdus: pristatymą į LP Express pa&scaron;tomatus ir LP Express kurjerių pristatymą.]]></description>
+    <author><![CDATA[Martynas Žaliaduonis]]></author>
+    <tab><![CDATA[shipping_logistics]]></tab>
+	<confirmUninstall><![CDATA[Ar tikrai norite ištrinti šį modulį?]]></confirmUninstall>
+    <is_configurable>0</is_configurable>
+    <need_instance>0</need_instance>
+	<limited_countries>lt</limited_countries>
+</module>

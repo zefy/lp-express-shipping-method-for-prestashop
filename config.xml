@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>lpexpress</name>
+    <displayName><![CDATA[LP Express Shipping]]></displayName>
+    <version><![CDATA[1.0.0]]></version>
+    <description><![CDATA[LP Express (lpexpress.lt) shipping method. This module adds two new carriers to your shop: shipping to LP Express self-service parcel terminals and shipping via LP Express courier.]]></description>
+    <author><![CDATA[Martynas Žaliaduonis]]></author>
+    <tab><![CDATA[shipping_logistics]]></tab>
+	<confirmUninstall><![CDATA[Are you sure you want to uninstall?]]></confirmUninstall>
+    <is_configurable>0</is_configurable>
+    <need_instance>0</need_instance>
+	<limited_countries>lt</limited_countries>
+</module>
